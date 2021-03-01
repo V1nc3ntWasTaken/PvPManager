@@ -218,6 +218,16 @@ public class PlayerListener implements Listener {
 			}
 	}
 
+	@EventHandler
+	public final onFireworkUse(final PlayerInteractEvent event) {
+		final PvPlayer player = ph.get(event.getPlayer());
+		final Player rawPlayer = event.getPlayer();
+		if (player != null && Settings.isInCombatEnabled() && player.isInCombat())
+			if ((rawPlayer.getInventory().getItemInMainHand().getType = Material.FIREWORK_ROCKET) || (rawPlayer.getInventory().getItemInOffHand().getType = Material.FIREWORK_ROCKET) && Settings.isBlockFireWork())
+				event.setCancelled(true);
+				player.message(Messages.getFireworkBlockedIncombat());
+	}
+
 	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
 	public final void onCommand(final PlayerCommandPreprocessEvent event) {
 		if (Settings.isInCombatEnabled() && Settings.isStopCommands() || Settings.isNewbieProtectionEnabled()) {

@@ -21,7 +21,7 @@
 General:
   Locale: en
   Default PvP: true
-  PvP Blood: true
+  PvP Blood: false
   Player Drop Mode: ALWAYS
   Ignore No Damage Hits: false
   Auto Soup Health: 0
@@ -34,9 +34,9 @@ General:
 # Push Back -> Players will be launched back when trying to enter a safe zone (Disabling this might improve performance)  
 # Reset Combat Tag -> Only meant for when Vulnerable is true. Toggles whether combat tagging resets while fighting in a safe zone. Works for WorldGuard Only
 Anti Border Hopping:
-  Vulnerable: true
-  Push Back: true
-  Reset Combat Tag: true
+  Vulnerable: false
+  Push Back: false
+  Reset Combat Tag: false
 
 # What should be disabled when a player(except operators) enters PvP
 # Fly -> Disable any kind of fly mode
@@ -45,10 +45,10 @@ Anti Border Hopping:
 # GodMode -> GodMode from Essentials or CommandBook
 # Invisibility -> Invisibility potions, defaults to false as it's a vanilla feature
 Disable:
-  Fly: true
-  GameMode: true
-  Disguise: true
-  GodMode: true
+  Fly: false
+  GameMode: false
+  Disguise: false
+  GodMode: false
   Invisibility: false
 
 # Section about the tag system
@@ -69,46 +69,47 @@ Disable:
 # And use the 'announce' command to broadcast, to disable just delete the command
 Tagged In Combat:
   Enabled: true
-  Time: 10
-  NameTag Prefix: '&4&lCombat '
-  Color: '&c'
-  Glowing: true
+  Time: 15
+  NameTag Prefix: 'none'
+  Color: ''
+  Glowing: false
   Action Bar:
-    Message: '&b&lCombat &a<barsLeft>&c<barsPassed> &e&l<time> &b[sec]'
-    Symbol: '▊'
+    Message: ''
+    Symbol: ''
     Total Bars: 20
   Untag Enemy: false
   Block:
-    EnderPearls: true
-    Teleport: true
+    FireWorks: true
+    EnderPearls: false
+    Teleport: false
     Place Blocks: false
     Interact: false
     Eat: false
     Commands:
-      Enabled: true
+      Enabled: false
       Whitelist: true
       Command List:
         - 'tell'
         - 'tag'
   Punishments:
-    Punish On Kick: true
+    Punish On Kick: false
     Money Penalty: 0
-    Log To File: true
+    Log To File: false
     Kill on Logout:
-      Enabled: true
+      Enabled: false
       Player Drops:
         Inventory: true
         Experience: true
         Armor: true
     Commands On PvPLog:
-      - 'announce &6[&8PvPManager&6]&c %p tried to escape combat and died!'
+      - ''
 
 # Should new players on your server be protected from PvP (If they want to PvP anyway they can use /newbie disable)
 # Time - How many minutes should newbie protection last, persists through restarts
 # Block Pick Items - Block players from picking up items while they have protection
 # Protect From Everything - Protect newbies from all types of damage including PvE
 Newbie Protection:
-  Enabled: true
+  Enabled: false
   Time(minutes): 5
   Block Pick Items: false
   Protect From Everything: false
@@ -120,7 +121,7 @@ Newbie Protection:
 # In this case, it would check every 60 seconds for abusers
 # Respawn Protection - After respawn, how many seconds should players be protected (0 to disable)
 Kill Abuse:
-  Enabled: true
+  Enabled: false
   Max Kills: 5
   Time Limit: 60
   Commands on Abuse:
@@ -167,11 +168,11 @@ PvP Toggle:
 # Should PvPManager be allowed to check for updates and tell you about them
 # Auto Update - After checking should we download it automatically for you?
 Update Check:
-  Enabled: true
-  Auto Update: true
+  Enabled: false
+  Auto Update: false
 
 Metrics:
-  Opt-out: false
+  Opt-out: true
 
 # Informs PvPManager if the config is updated, do not touch it unless you want to reset the config
 Config Version: ${config.version}

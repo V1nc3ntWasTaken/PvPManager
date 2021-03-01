@@ -145,6 +145,7 @@ public final class Settings {
 		actionBarTotalBars = TAGGEDCOMBAT.getInt("Action Bar.Total Bars", 10);
 		untagEnemy = TAGGEDCOMBAT.getBoolean("Untag Enemy", false);
 		blockEnderPearl = TAGGEDCOMBAT.getBoolean("Block.EnderPearls", true);
+		blockFireWork = TAGGEDCOMBAT.getBoolean("Block.FireWorks", true);
 		blockTeleport = TAGGEDCOMBAT.getBoolean("Block.Teleport", true);
 		blockPlaceBlocks = TAGGEDCOMBAT.getBoolean("Block.Place Blocks", false);
 		blockInteractInCombat = TAGGEDCOMBAT.getBoolean("Block.Interact", false);
@@ -319,6 +320,10 @@ public final class Settings {
 
 	public static boolean isBlockEnderPearl() {
 		return blockEnderPearl;
+	}
+
+	public static boolean isBlockFireWork() {
+		return blockFireWork;
 	}
 
 	public static boolean isBlockPickNewbies() {
