@@ -14,6 +14,8 @@ PvPManager
 ***
 PvPManager aims to be an All in One PvP plugin. Meaning that instead of using multiple plugins that change/customize the PvP experience in your server you would just use PvPManager. 
 
+Modified by V1nc3ntWasTaken
+
 **Some of the plugin's main features are:**
 - Toggle PvP for each player  
 - Stop combat logging by issuing punishments
