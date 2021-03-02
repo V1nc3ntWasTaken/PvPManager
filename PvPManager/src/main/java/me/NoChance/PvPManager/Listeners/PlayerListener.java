@@ -218,14 +218,33 @@ public class PlayerListener implements Listener {
 			}
 	}
 
+	// In debug mode
 	@EventHandler
-	public final onFireworkUse(final PlayerInteractEvent event) {
+	public final void onFireworkUse(final PlayerInteractEvent event) {
+
 		final PvPlayer player = ph.get(event.getPlayer());
 		final Player rawPlayer = event.getPlayer();
-		if (player != null && Settings.isInCombatEnabled() && player.isInCombat())
-			if ((rawPlayer.getInventory().getItemInMainHand().getType = Material.FIREWORK_ROCKET) || (rawPlayer.getInventory().getItemInOffHand().getType = Material.FIREWORK_ROCKET) && Settings.isBlockFireWork())
-				event.setCancelled(true);
-				player.message(Messages.getFireworkBlockedIncombat());
+
+		if ((rawPlayer.getInventory().getItemInMainHand().getType() == Material.FIREWORK_ROCKET) || (rawPlayer.getInventory().getItemInOffHand().getType() == Material.FIREWORK_ROCKET)) {
+			rawPlayer.sendMessage("rawPlayer.getInventory().getItemInMainHand().getType() or rawPlayer.getInventory().getItemInOffHand().getType() is equal to Material.FIREWORK_ROCKET");
+			event.setCancelled(true);
+			player.message(Messages.getFireworkBlockedIncombat());
+		}
+
+		if (!(Settings.isBlockFireWork())) return;
+		rawPlayer.sendMessage("Settings.isBlockFireWork() returns true");
+		if (player == null) return;
+		rawPlayer.sendMessage("player == null is false");
+		if (!(Settings.isInCombatEnabled())) return;
+		rawPlayer.sendMessage("Settings.isInCombatEnabled() returns true");
+		if (!(player.isInCombat())) return;
+		rawPlayer.sendMessage("player.isInCombat() returns true");
+
+		if ((rawPlayer.getInventory().getItemInMainHand().getType() == Material.FIREWORK_ROCKET) || (rawPlayer.getInventory().getItemInOffHand().getType() == Material.FIREWORK_ROCKET)) {
+			rawPlayer.sendMessage("rawPlayer.getInventory().getItemInMainHand().getType() or rawPlayer.getInventory().getItemInOffHand().getType() is equal to Material.FIREWORK_ROCKET");
+			event.setCancelled(true);
+			player.message(Messages.getFireworkBlockedIncombat());
+		}
 	}
 
 	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)

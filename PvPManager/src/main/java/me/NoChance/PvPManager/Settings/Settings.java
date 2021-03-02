@@ -20,6 +20,7 @@ public final class Settings {
 	private static int configVersion;
 	private static String minecraftVersion;
 	private static boolean autoUpdate;
+	private static boolean blockFireWork;
 	private static boolean blockEnderPearl;
 	private static boolean blockTeleport;
 	private static boolean blockPickNewbies;
